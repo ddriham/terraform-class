@@ -1,4 +1,4 @@
-variable "instances" {
+variable "instances" {              # usually this block will go to variables.tf
     type = map(object({
         ami = string
         instance_type = string
@@ -18,7 +18,7 @@ variable "instances" {
 
 resource "aws_instance" "example" {
     for_each = var.instances
-    ami = each.value.ami
-    instance_type = each.value.instance_type
+    ami = each.value.ami       # each ami of instance
+    instance_type = each.value.instance_type # each instace type (the current object)
   
 }

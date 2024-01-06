@@ -4,8 +4,8 @@ Conditional
 
 
 resource "aws_s3_bucket" "default" {
-    bucket = var.custom_name != "" ? var.custom_name : default 
-    acl = private
+    bucket = var.custom_name != "" ? var.custom_name : default # there is no if on terraform
+    acl = private                                              # in this case if custo_name is not empty use it else use default
   
 }
 
@@ -14,7 +14,9 @@ resource "aws_s3_bucket" "default" {
 Loop
 
 variable "users" {
-    type = map(object{ is_admin = boolean})
+    type = map(object({
+       is_admin = boolean
+  }))
   
 }
 
