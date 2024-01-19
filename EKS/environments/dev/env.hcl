@@ -8,8 +8,8 @@ locals {
   eks_create_aws_auth_configmap       = false
   eks_manage_aws_auth_configmap       = true
   region = "eu-west-2"
-  vpc_id = "vpc-01a74fcbb64cc0b75"
-  subnet_id = ["subnet-0175e2013f409f607", "subnet-07f58e08ac8ecd6c4", "subnet-0088dbf20a826a78e"]
+  vpc_id = "vpc-01a74fcbb64cc0b75" # must be change according the vpc i created
+  subnet_id = ["subnet-0175e2013f409f607", "subnet-07f58e08ac8ecd6c4", "subnet-0088dbf20a826a78e"] # hard coded
   
   # EKS allowed users
   aws_auth_users = [
